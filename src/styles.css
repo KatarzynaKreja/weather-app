@@ -1,0 +1,38 @@
+body {
+  font-family: "Comfortaa", cursive;
+  max-width: 50%;
+}
+input {
+  padding: 0px 40px;
+  margin-top: 5px;
+}
+h1,
+h3 {
+  margin: 5px;
+  line-height: 200%;
+}
+image {
+  max-width: 30px;
+}
+.btn-outline-primary {
+  padding: 0px 40px;
+  margin-top: 5px;
+  color: rgb(102, 27, 240);
+}
+.container {
+  margin: 20px 50px;
+  border: 1px solid rgb(106, 82, 196);
+  background: #94bde4;
+}
+.card {
+  background-color: #c9e1f8;
+  text-align: center;
+  margin: 10px;
+}
+.btn {
+  padding: 0px 40px;
+  margin-top: 5px;
+  color: #1b1b19;
+  background: #c9e1f8
+  border: 1px solid rgb(106, 82, 196);
+}

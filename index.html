@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5214be426e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form id="search-form">
+  <input 
+  type="text" 
+  placeholder="Search for a city" 
+  autocomplete="off" 
+  autofocus="on"
+  id="search-input"/>
+<input type="submit" id="search" value="Search"/>
+<button type="button" class="btn btn-danger" id="current">Current city</button>
+
+
+          </form>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col">
+          <h1>CRACOW</h1>
+          <h3 id="date">
+            Friday, 12th Feb <br />
+            17:40
+          </h3>
+        </div>
+        <di class="col">
+          <div class="col-5"></div>
+          <div class="col-10">
+            <div class="col-6">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <p class="card-text">
+                    <span id= "temp">5</span>ºC 
+                    <br />
+                    <span id="description">Weather </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </di>
+      </div>
+      
+   
+      <script src="src/javascript.js"></script>
+  </body>
+</html>
