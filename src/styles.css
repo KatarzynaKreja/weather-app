@@ -33,6 +33,9 @@ image {
   padding: 0px 40px;
   margin-top: 5px;
   color: #1b1b19;
-  background: #c9e1f8
+  background: #c9e1f8;
   border: 1px solid rgb(106, 82, 196);
+}
+.github-link {
+  opacity: 0.3;
 }
