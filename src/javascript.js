@@ -24,12 +24,18 @@ let now = document.querySelector("#date");
 
 now.innerHTML = `${day}, ${hour}:${minute}`;
 
+function searchCity(city) {
+  let apiKey = "f77cad6d452d84a939c49b6eacf724ee";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
 function changeCityWeather(event) {
   event.preventDefault();
   let newCity = document.querySelector("#search-input");
   let currentCity = document.querySelector("h1");
   currentCity.innerHTML = `${newCity.value}`;
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiKey = "f77cad6d452d84a939c49b6eacf724ee";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity.value}&appid=${apiKey}&units=${units}`;
 
@@ -67,3 +73,5 @@ function displayWeather(response) {
 function showCurrentWeather() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+searchCity("Catania");
