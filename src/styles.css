@@ -1,6 +1,6 @@
 body {
   font-family: "Comfortaa", cursive;
-  max-width: 50%;
+  max-width: ;
 }
 input {
   padding: 0px 40px;
@@ -9,7 +9,7 @@ input {
 h1,
 h3 {
   margin: 5px;
-  line-height: 200%;
+  line-height: 150%;
 }
 image {
   max-width: 30px;
@@ -20,12 +20,14 @@ image {
   color: rgb(102, 27, 240);
 }
 .container {
-  margin: 20px 50px;
+  margin: 40px auto;
   border: 1px solid rgb(106, 82, 196);
-  background: #94bde4;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  display: block;
+  max-width: 600px;
 }
 .card {
-  background-color: #c9e1f8;
+  background-color: #cdc2e0;
   text-align: center;
   margin: 10px;
 }
@@ -33,7 +35,7 @@ image {
   padding: 0px 40px;
   margin-top: 5px;
   color: #1b1b19;
-  background: #c9e1f8;
+  background: #cdc2e0;
   border: 1px solid rgb(106, 82, 196);
 }
 .github-link {

@@ -22,7 +22,7 @@ if (minute < 10) {
 
 let now = document.querySelector("#date");
 
-now.innerHTML = `${day}, ${hour}:${minute}`;
+now.innerHTML = `Last updated at ${day}, ${hour}:${minute}`;
 
 function searchCity(city) {
   let apiKey = "f77cad6d452d84a939c49b6eacf724ee";

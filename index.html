@@ -13,7 +13,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -32,17 +32,15 @@
                 autocomplete="off" 
                 autofocus="on"
                 id="search-input"/>
-            <input type="submit" id="search" value="Search"/>
+            <input type="submit" class="btn" id="search" value="Search"/>
             <button type="button" class="btn btn-danger" id="current">Current city</button>
           </form>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <h1>CRACOW</h1>
+          <h1></h1>
           <h3 id="date">
-            Friday, 12th Feb <br />
-            17:40
           </h3>
         </div>
         <div class="col">
@@ -51,9 +49,9 @@
               <div class="card" style="width: 10rem">
                 <div class="card-body">
                   <p class="card-text">
-                    <span id= "temp">5</span>ºC 
+                    <span id= "temp"></span>ºC 
                     <br />
-                    <span id="description">Weather </span>
+                    <span id="description"> </span>
                   </p>
                 </div>
               </div>
@@ -61,8 +59,10 @@
           </div>
         </di>
       </div> 
+      
       <br />
       <span class="github-link"><a href="https://github.com/KatarzynaKreja/weather-app" target="_blank" >Open-source code</a> by Katarzyna Kreja</span>
+ 
 
     <script src="src/javascript.js"></script>
   </body>
