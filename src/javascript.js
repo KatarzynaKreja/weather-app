@@ -59,12 +59,12 @@ function showPosition(position) {
 function displayWeather(response) {
   console.log(response.data);
   let city = response.data.name;
-
-  let temp = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  console.log(celsiusTemperature);
   let tempElement = document.querySelector("#temp");
   let descriptionElement = document.querySelector("#description");
   let weather = response.data.weather[0].description;
-  tempElement.innerHTML = temp;
+  tempElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = weather;
   let cityElem = document.querySelector("h1");
   cityElem.innerHTML = city;
@@ -73,5 +73,26 @@ function displayWeather(response) {
 function showCurrentWeather() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let celsiusLink = document.querySelector("#cel-temp-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahreinheitLink = document.querySelector("#f-link");
+//fahreinheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 searchCity("Catania");
