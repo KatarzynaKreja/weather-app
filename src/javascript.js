@@ -57,10 +57,9 @@ function showPosition(position) {
   axios.get(url).then(displayWeather);
 }
 function displayWeather(response) {
-  console.log(response.data);
   let city = response.data.name;
   celsiusTemperature = response.data.main.temp;
-  console.log(celsiusTemperature);
+  console.log(response);
   let tempElement = document.querySelector("#temp");
   let descriptionElement = document.querySelector("#description");
   let weather = response.data.weather[0].description;
@@ -68,6 +67,16 @@ function displayWeather(response) {
   descriptionElement.innerHTML = weather;
   let cityElem = document.querySelector("h1");
   cityElem.innerHTML = city;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${Math.round(response.data.main.humidity)} %`;
+  let iconSpace = document.querySelector("#icon");
+  iconSpace.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconSpace.setAttribute("alt", `${weather}`);
 }
 
 function showCurrentWeather() {
@@ -87,12 +96,13 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+debugger;
 let celsiusTemperature = null;
 
 let celsiusLink = document.querySelector("#cel-temp-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-let fahreinheitLink = document.querySelector("#f-link");
-//fahreinheitLink.addEventListener("click", displayFahrenheitTemperature);
+let fahreinheitLink = document.querySelector("link");
+fahreinheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 searchCity("Catania");
