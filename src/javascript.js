@@ -50,33 +50,46 @@ currentWeatherButton.addEventListener("click", showCurrentWeather);
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = `f77cad6d452d84a939c49b6eacf724ee`;
 
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
   axios.get(url).then(displayWeather);
 }
+
+function displayForecast(response) {
+  console.log(response);
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `${
+    response.data.list[0].dt_txt
+  } <br /> <strong>${Math.round(
+    response.data.list[0].main.temp_max
+  )}</strong>/${Math.round(response.data.list[0].main.temp_min)}`;
+}
+
 function displayWeather(response) {
   let city = response.data.name;
   celsiusTemperature = response.data.main.temp;
-  console.log(response);
   let tempElement = document.querySelector("#temp");
   let descriptionElement = document.querySelector("#description");
   let weather = response.data.weather[0].description;
-  tempElement.innerHTML = Math.round(celsiusTemperature);
-  descriptionElement.innerHTML = weather;
   let cityElem = document.querySelector("h1");
-  cityElem.innerHTML = city;
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = `${Math.round(response.data.main.humidity)} %`;
   let iconSpace = document.querySelector("#icon");
   iconSpace.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconSpace.setAttribute("alt", `${weather}`);
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+  descriptionElement.innerHTML = weather;
+  cityElem.innerHTML = city;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  humidityElement.innerHTML = `${Math.round(response.data.main.humidity)} %`;
+
+  let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(url).then(displayForecast);
 }
 
 function showCurrentWeather() {
@@ -85,6 +98,7 @@ function showCurrentWeather() {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
+  celsiusTemperature = response.data.main.temp;
   let temperatureElement = document.querySelector("#temp");
   let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
@@ -104,5 +118,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let fahreinheitLink = document.querySelector("link");
 fahreinheitLink.addEventListener("click", displayFahrenheitTemperature);
-
+let apiKey = `f77cad6d452d84a939c49b6eacf724ee`;
 searchCity("Catania");
