@@ -131,7 +131,6 @@ function showCurrentWeather() {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  celsiusTemperature = response.data.main.temp;
   let temperatureElement = document.querySelector("#temp");
   let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
@@ -143,13 +142,12 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-debugger;
 let celsiusTemperature = null;
 
-let celsiusLink = document.querySelector("#cel-temp-link");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-let fahreinheitLink = document.querySelector("link");
-fahreinheitLink.addEventListener("click", displayFahrenheitTemperature);
 let apiKey = `f77cad6d452d84a939c49b6eacf724ee`;
 searchCity("Catania");

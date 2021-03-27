@@ -36,24 +36,25 @@
         <input type="submit" class="btn" id="search" value="Search" />
         <button type="button" class="btn btn-danger" id="current">📌</button>
       </form>
+      <br>
       <div class="row">
         <div class="col-6">
           <h1></h1>
           <h3 id="date"></h3>
+          <img src="" alt="" id="icon" />
         </div>
         <div class="col-6">
           <div class="card" style="width: 10rem">
             <div class="card-body">
               <p class="card-text">
                 <span id="temp"> </span>
-                <a href="#" id="cel-temp-link">ºC</a>|<a href="#" id="link">
-                  ºF
-                </a>
+                <a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
                 <li id="humidity"></li>
                 <li id="wind"></li>
                 <li id="description"></li>
               </p>
-              <img src="" alt="" id="icon" />
             </div>
           </div>
         </div>

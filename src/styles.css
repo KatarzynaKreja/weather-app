@@ -26,7 +26,7 @@ li {
   border: 1px solid rgb(106, 82, 196);
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   display: block;
-  max-width: 700px;
+  max-width: 600px;
 }
 .card {
   background-color: #cdc2e0;
