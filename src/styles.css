@@ -41,7 +41,7 @@ li {
   border: 1px solid rgb(106, 82, 196);
 }
 .github-link {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 .active {
   text-decoration: none;
@@ -54,6 +54,10 @@ li {
   color: #1b1b19;
 }
 
-#forecast {
-  font-size: 20px;
+#forecast h5 {
+  text-align: center;
+}
+
+#forecast img {
+  width: 60px;
 }
