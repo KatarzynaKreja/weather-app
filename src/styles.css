@@ -27,6 +27,7 @@ li {
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   display: block;
   max-width: 600px;
+  border-radius: 4px;
 }
 .card {
   background-color: #cdc2e0;
